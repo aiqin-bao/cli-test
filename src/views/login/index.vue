@@ -3,9 +3,9 @@
 		<div>
 			23456789
 		</div>
-		<button @click="handler">
+		<el-button @click="handler" type="primary">
 			点击跳转
-		</button>
+		</el-button>
 	</div>
 
 </template>
