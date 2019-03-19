@@ -1,7 +1,7 @@
 <template>
 	<div>
-		<div>
-			23456789
+		<div class="header">
+			测试header
 		</div>
 		<el-button @click="handler" type="primary">
 			点击跳转
@@ -28,6 +28,11 @@ export default {
 }
 </script>
 
-<style>
+<style style="scss">
+	.header {
+		background: #f3f3f4;
+		line-height: 44px;
+		text-align: center;
+	}
 
 </style>
