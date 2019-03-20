@@ -14,7 +14,7 @@ const defaultRouter = {
 const routes = [
 	defaultRouter, 
 	Login,
-	...Test
+	Test
 ]
 
 

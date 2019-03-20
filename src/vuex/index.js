@@ -7,7 +7,27 @@ Vue.use(Vuex)
 export default new Vuex.Store({
 	state: {
 		token: '1234567890-',
-		navs: [{state: 1, num: 345}, {state: 2, num: 456}]
+		navs: [
+			{
+				path: '/work',
+				name: '工作台',
+				icon: '',
+				children: []
+			},
+			{
+				path: '/org',
+				name: '机构管理',
+				icon: '',
+				children: [
+					{
+						path: '/base-message',
+						icon: '',
+						name: '机构的基本信息',
+						children: []
+					}
+				]
+			}
+		]
 	},
 	mutations: {
 		setToken(state, data) {

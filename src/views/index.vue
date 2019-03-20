@@ -1,15 +1,14 @@
 <template>
-	<div>
-		<div>content</div>
-		<el-button type="primary" @click="testClick">
-			测试action
-		</el-button>
-	</div>
+	<a-body></a-body>
 </template>
 
 <script>
 import { mapState, mapGetters, mapActions} from 'vuex'
+import aBody from '@/components/layout/body'
 export default {
+	components: {
+		aBody
+	},
 
 	data() {
 		return {
@@ -30,6 +29,7 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss">
+
 
 </style>

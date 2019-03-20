@@ -2,7 +2,7 @@
 /**
  * @desc 页面后续的路由
  */
-
+import View from '@/views/index'
 const children = []
 
 
@@ -14,4 +14,10 @@ children.push(
 	}
 )
 
-export default children;
+
+
+export default {
+	path: '/index',
+	component: View,
+	children,
+};

@@ -4,8 +4,8 @@
 			测试header
 		</div>
 		<el-button @click="handler" type="primary">
-			点击跳转
-		</el-button>
+				点击跳转
+			</el-button>
 	</div>
 
 </template>
