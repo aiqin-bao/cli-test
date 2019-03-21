@@ -1,11 +1,13 @@
 <template>
 	<div>
 		<div class="header">
-			测试header
+			登录页面
 		</div>
-		<el-button @click="handler" type="primary">
-				点击跳转
+		<div class="btn-login">
+			<el-button @click="handler" type="primary">
+				点击登录
 			</el-button>
+		</div>
 	</div>
 
 </template>
@@ -33,6 +35,11 @@ export default {
 		background: #f3f3f4;
 		line-height: 44px;
 		text-align: center;
+	}
+	.btn-login {
+		display: flex;
+		justify-content: center;
+		margin-top: 40px;
 	}
 
 </style>

@@ -1,3 +1,58 @@
 /**
  * @desc 请求
  */
+
+ import { create as axiosCreate } from 'axios'
+
+ const instance = axiosCreate()
+ 
+
+
+ //请求拦截器	
+ instance.interceptors.request.use(config => {
+	 //发送请求之前做什么
+	//  类似 注入 header
+	 return config;
+ }, (error) => {
+	 //请求err的逻辑出来 
+	 return Promise.reject(error)
+ })
+
+ //请求成功后的拦截器
+ instance.interceptors.response.use(response => {
+	return new Promise((resolve, reject) => {
+		let {code, resultCode , data, message} = response.data
+		if(code !== 200) {  //错误处理
+			reject(code)
+		}else{
+			resolve(data)
+		}
+	})
+ })
+
+
+ const http = {
+
+	get(url, params={}) {
+		params['_'] = Date.now()
+		return http.send('get', url, params, {})
+	},
+	
+
+	post(url, data={}) {
+		return http.send('post', url, {}, data)
+	},
+
+	send (method, url, params, data) {
+		return instance({
+			method,
+			url,
+			params,
+			data
+		})
+	}
+	
+ }
+
+
+ export default http;
