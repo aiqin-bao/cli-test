@@ -5,7 +5,8 @@
  import { create as axiosCreate } from 'axios'
 
  const instance = axiosCreate()
- 
+
+ instance.baseURL = "http://192.168.3.46:3002/"
 
 
  //请求拦截器	
@@ -22,7 +23,7 @@
  instance.interceptors.response.use(response => {
 	return new Promise((resolve, reject) => {
 		let {code, resultCode , data, message} = response.data
-		if(code !== 200) {  //错误处理
+		if(code != 200) {  //错误处理
 			reject(code)
 		}else{
 			resolve(data)
@@ -44,6 +45,7 @@
 	},
 
 	send (method, url, params, data) {
+		url = url.match(/^(http|https):\/\//) ? url : instance.baseURL + url
 		return instance({
 			method,
 			url,

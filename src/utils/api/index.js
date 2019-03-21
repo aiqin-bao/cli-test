@@ -5,6 +5,8 @@
 
  import http from '../ajax'
 
+ 
+
 
 const {get, post, send } = http
 
@@ -12,5 +14,9 @@ const {get, post, send } = http
 
 
  export const getList = params => {
-	 return get('/admin', params)
+	 return get('admin', params)
+ }
+
+ export const testPost  = params => {
+	 return post('post-admin', params)
  }
