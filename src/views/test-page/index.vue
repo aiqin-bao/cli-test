@@ -23,10 +23,14 @@ export default {
 		testClick() {
 			this.addNum('点击')
 		},
+		addData(r) {
+			console.warn(r, '---2');
+			
+		},
 		async getPostData() {
 			let r = await API.testPost({name: '测试'})
-			console.warn(r);
-			
+			console.warn(r, '---1');	
+			this.addData(r)
 		},
 		...mapActions(['addNum'])
 	},

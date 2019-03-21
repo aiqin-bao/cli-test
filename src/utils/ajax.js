@@ -38,7 +38,6 @@
 		params['_'] = Date.now()
 		return http.send('get', url, params, {})
 	},
-	
 
 	post(url, data={}) {
 		return http.send('post', url, {}, data)
