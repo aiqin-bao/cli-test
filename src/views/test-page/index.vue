@@ -10,7 +10,6 @@
 <script>
 import { mapState, mapGetters, mapActions} from 'vuex'
 export default {
-
 	data() {
 		return {
 			tips: '测试页面'
@@ -25,6 +24,9 @@ export default {
 			this.addNum('点击')
 		},
 		...mapActions(['addNum'])
+	},
+	created() {
+		console.warn(API);
 	}
 
 }
