@@ -18,5 +18,5 @@ const {get, post, send } = http
  }
 
  export const testPost  = params => {
-	 return post('post-admin', params)
+	 return post('post-admi', params)
  }

@@ -16,6 +16,9 @@
 	 return config;
  }, (error) => {
 	 //请求err的逻辑出来 
+	 if (error.toString() == 'Error: Network Error') {
+		http[$errorHandler]('Network Error', '网络错误')
+	  }
 	 return Promise.reject(error)
  })
 
@@ -23,12 +26,18 @@
  instance.interceptors.response.use(response => {
 	return new Promise((resolve, reject) => {
 		let {code, resultCode , data, message} = response.data
-		if(code != 200) {  //错误处理
+		if(code != 200) { 
+			 //错误处理
 			reject(code)
 		}else{
 			resolve(data)
 		}
 	})
+ }, e => {
+	if (e.toString().includes('404')) {  //判断接口出错的
+		console.warn('Network Error', '网络错误');
+	  }
+	 return Promise.reject(e)
  })
 
 
